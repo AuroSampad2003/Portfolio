@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auro's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleSS.css">
+    <!-- <script src="script.js"></script> -->
+    <script src="https://kit.fontawesome.com/2c313ee4fc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <h1 class="logo">Portfolio.</h1>
+        <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+    </nav>
+
+    <div id="header">
+        <div class="container">
+            <div class="header">
+                <div class="header-image">
+                    <img src="MyPic.jpg" alt="">
+                </div>
+                <div class="header-right">
+                    <div class="header-text">
+                        <h4>Hi, I'm <span class="name">Auro Sampad</span></h4>
+                        <div>And I'm a passionate</div>
+                        <!-- Element to contain animated typing -->
+                        <p><span id="element"></span></p>
+                    </div>
+                    <div class="header-contact">
+                        <a href="Auro's Resume.pdf" class="resume"><i class="fa-solid fa-file"></i> Resume</a>
+                        <a class="social-icons" href="https://www.linkedin.com/in/aurosampad-champatiray/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a class="social-icons" href="https://github.com/AuroSampad2003"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Designer', 'Frontend Developer', 'Full-Stack Developer'],
+            typeSpeed: 70,
+        });
+    </script>
+
+    <!--------------About-------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="https://static.vecteezy.com/system/resources/previews/011/153/360/original/3d-web-developer-working-on-project-illustration-png.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Dedicated and sincere full-stack web developer with a passion for 
+                        honesty and integrity in all endeavors. Holds a Bachelor’s degree in 
+                        Computer Science and is deeply committed to ongoing learning and 
+                        exploring  emerging technologies.  Excels  in  problem-solving  and 
+                        thrives in collaborative team environments. </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('skill')">Skills</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="education">
+                        <ul>
+                            <li><span>Board of Secondary Education, Odisha  [2018]</span><br>Sri Aurobindo Integral Education Centre, Matrubihar,
+                                Kalupadaghat, Khordha</li>
+                            <li><span>Council of Higher Secondary, Odisha   [2018-20]</span><br>Rajdhani H.S. School of Sc., Arts and Comm.,
+                                Bhubaneswar, Odisha</li>
+                            <li><span>Graduation Degree  [2020-23]</span><br>Nayagarh Autonomous College, Nayagarh,
+                                Odisha<br>B.Sc. in Computer Science (Hons.)</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>I'm Fresher</span><br>No Work Experience</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="skill">
+                        <ul>
+                            <li><span>Programming Language</span><br>Java (Core, EE)</li>
+                            <li><span>Framework</span><br>Hibernate, Spring, React js</li>
+                            <li><span>Database Management</span><br>SQL, MySQL</li>
+                            <li><span>Web Technologies</span><br>HTML, CSS, JavaScript, Bootstrap</li>
+                            <li><span>Version Control</span><br>Git, GitHub</li>
+                            <li><span>Development Tools</span><br>Eclipse, VS Code</li>
+                            <li><span>Problem-Solving and Analytical Skills</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------Skills------------------------ -->
+    <div id="skills">
+        <div class="container">
+            <h1 class="sub-title">Skills</h1>
+            <div class="skills-list">
+                <div>
+                    <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-512.png" alt="">
+                    <h3>Java</h3>
+                </div>
+                <div>
+                    <img src="https://cdn.worldvectorlogo.com/logos/hibernate.svg" alt="">
+                    <h3>Hibernate</h3>
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/640px-Spring_Boot.svg.png" alt="">
+                    <h3>Spring</h3>
+                </div>
+                <div>
+                    <img src="https://www.freeiconspng.com/thumbs/sql-server-icon-png/sql-server-icon-png-29.png" alt="">
+                    <h3>SQL</h3>
+                </div>
+                <div>
+                    <img src="https://1000logos.net/wp-content/uploads/2020/08/MySQL-Logo.png" alt="">
+                    <h3>MySql</h3>
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/2048px-HTML5_Badge.svg.png" alt="">
+                    <h3>HTML</h3>
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="">
+                    <h3>CSS</h3>
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" alt="">
+                    <h3>JavaScript</h3>
+                </div>
+                <div>
+                    <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" alt="">
+                    <h3>React js</h3>
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" alt="">
+                    <h3>Bootstrap</h3>
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/240px-Git_icon.svg.png" alt="">
+                    <h3>Git</h3>
+                </div>
+                <div>
+                    <img src="https://www.nicepng.com/png/full/52-520535_free-files-github-github-icon-png-white.png" alt="">
+                    <h3>GitHub</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------Projects------------------------ -->
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="https://images.ladbible.com/resize?type=webp&quality=70&width=3840&fit=contain&gravity=auto&url=https://images.ladbiblegroup.com/v3/assets/blt949ea8e16e463049/blt7d021759a171e554/65b7f28628d27c040aa87573/iphone-calculator.jpg"
+                        alt="">
+                    <div class="layer">
+                        <h3>Calculator App</h3>
+                        <p>Developed a simple, user-friendly calculator application to perform basic arithmetic operations. This project showcases proficiency in front-end web development technologies.</p>
+                        <a href="https://aurosampad2003.github.io/REAL-TIME-CALCULATOR/" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="https://frontegg.com/wp-content/uploads/2022/03/rbac-2.png"
+                        alt="">
+                    <div class="layer">
+                        <h3>User Management System</h3>
+                        <p>Developed a comprehensive User Management System that facilitates the creation, retrieval, updating, and 
+                            deletion of user profiles. This system employs the MVC architecture to ensure a modular, maintainable, and 
+                            scalable application structure.</p>
+                        <a href="#" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="https://cdn.prod.website-files.com/620e4101b2ce12a1a6bff0e8/63f3aed338f92709d7908c76_Header_10%20Best%20Note-Taking%20Apps%20Every%20Student%20Needs%20in%202023_JAN23.webp"
+                        alt="">
+                    <div class="layer">
+                        <h3>Note App</h3>
+                        <p>Developed a full-stack web application to create, view, update, and delete notes. The application follows the 
+                            MVC architecture, ensuring a clear separation of concerns and maintainable codebase
+                        </p>
+                        <a href="#" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
+    <!-- ---------------------Contact----------------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i>aurosampadchampatiray573@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 8260341299</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/auro.sampad.1?mibextid=JRoKGi"><i
+                                class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://www.instagram.com/auro_sampad_71?igsh=dnZncXNhZWY4MnNw"><i
+                                class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/aurosampad-champatiray/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/AuroSampad2003"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="Auro's Resume.pdf" class="btn btn2"><i class="fa-solid fa-file"></i> Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Full Name" required>
+                        <input type="email" name="Email" placeholder="E-mail" required>
+                        <textarea name="Message" rows="6" placeholder="Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="cr">Thank you for visit my page.</p>
+        </div>
+    </div>
+
+    <script>
+        // script for about skills
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link")
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+
+        
+        // script for side menu bar
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+
+        //Input web app URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx-FfrMVt-xZ225P8OyvvYGxVKmJA5CeR8hTsdh7ZK7hGn3wmxs4zcrHzYUP0lcuhZ1cQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully."
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>
