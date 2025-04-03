@@ -12,12 +12,13 @@ html{
 body{
     background: rgb(0, 0, 0);
     color: white;
+    
 }
 
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(bg1.jpeg);
+    background-image: url(images/bg.jpeg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -54,6 +55,8 @@ nav ul li{
     display: inline-block;
     list-style-type: none;
     margin: 10px 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     opacity: 0;
     animation: slideBottom 1s ease forwards;
 }
@@ -128,22 +131,10 @@ nav ul li a:hover::after{
 /* .header-contact{
     margin-top: 10px;
 } */
-.header-contact .resume{
-    display: inline-block;
+.header-contact .resume-btn{
     margin-right: 20px;
     margin-top: 10px;
-    width: fit-content;
     padding: 10px 30px;
-    background: blue;
-    /* border: 1px solid blue; */
-    border-radius: 6px;
-    text-decoration: none;
-    color: white;
-    transition: background 0.4s;
-}
-.header-contact .resume:hover{
-    background: rgb(0, 0, 100);
-    /* border: 1px solid rgb(0, 0, 100); */
 }
 .header-contact .social-icons{
     display: inline-block;
@@ -276,33 +267,61 @@ nav ul li a:hover::after{
     transform: translateY(-10px);
 }
 
+/* Hidden Skills (Initially Collapsed) */
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* "See More" Button */
+#seeMoreSkillsBtn {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid blue;
+    padding: 10px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    transition: background 0.5s, color 0.5s;
+    cursor: pointer; /* Ensures it looks clickable */
+    font-size: 16px;
+}
+
+#seeMoreSkillsBtn:hover {
+    background: blue;
+    color: white;
+}
+
 /* --------------projects-------------- */
 #projects{
 padding: 50px 0;
 }
 .work-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
     grid-gap: 40px;
     margin-top: 50px;
 }
-.work{
+.work-item{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
 }
-.work img{
+.work-item img{
     height: 100%;
     width: 100%;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
 }
-.layer{
+.work-info{
     width: 100%;
     height: 0;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0, 0, 122, 0.358));
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(2px);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -315,57 +334,79 @@ padding: 50px 0;
     padding: 0 40px;
     text-align: center;
     font-size: 14px;
-    text-shadow: 0.5px 0.5px  black;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.46);
     transition: height 0.5s;
 }
-.layer h3{
+.work-info h3{
     font-weight: 500;
     margin-bottom: 20px;
 }
-.layer a{
+.work-info a{
     margin-top: 20px;
     color: blue;
     text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
+    font-size: 13px;
+    line-height: 40px;
     background: white;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     text-align: center;
 }
-.work:hover img{
+.work-item:hover img{
     transform: scale(1.1);
 }
-.work:hover .layer{
+.work-item:hover .work-info{
     height: 100%;
 }
-.btn{
+/* Hidden Works (Initially Collapsed) */
+.hidden {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+
+/* "See More" Button */
+#seeMoreWorksBtn {
     display: block;
-    /* margin: 50px auto; */
-    margin-top: 50px;
-    margin-bottom: 70px;
+    margin: 50px auto;
     width: fit-content;
     border: 1px solid blue;
     padding: 10px 50px;
     border-radius: 6px;
     text-decoration: none;
     color: white;
-    transition: background 0.5s;
+    background: transparent;
+    transition: background 0.5s, color 0.5s;
+    cursor: pointer; /* Ensures it looks clickable */
+    font-size: 16px;
 }
-.btn:hover{
+
+#seeMoreWorksBtn:hover {
     background: blue;
+    color: white;
 }
 
 /* ----------------contact-------------- */
+/* .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+} */
 .contact-left{
-    flex-basis: 35%;
+    flex-basis: 40%;
+    text-align: left;
 }
 .contact-right{
-    flex-basis: 60%;
+    flex-basis: 55%;
 }
 .contact-left p{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .contact-left p i{
     color: blue;
@@ -373,23 +414,37 @@ padding: 50px 0;
     font-size: 25px;
 }
 .social-icons{
-    margin-top: 30px;
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
 }
 .social-icons a{
     text-decoration: none;
     font-size: 30px;
-    margin-right: 15px;
     color: gray;
-    display: inline-block;
     transition: transform 0.5s;
 }
 .social-icons a:hover{
     color: blue;
     transform: translateY(-5px);
 }
-.btn{
+.resume-btn{
     display: inline-block;
-    cursor: pointer;
+    margin: 50px auto;
+    width: fit-content;
+    border: none;
+    background: blue;
+    padding: 10px 45px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s, color 0.5s;
+    cursor: pointer; /* Ensures it looks clickable */
+    font-size: 16px;
+    margin-top: 20px;
+}
+.resume-btn:hover{
+    background: rgb(0, 0, 100);
 }
 .contact-right form{
     width: 100%;
@@ -405,12 +460,23 @@ form input, form textarea{
     font-size: 18px;
     border-radius: 6px;
 }
-.btn2{
+.submitBtn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: none;
     background: blue;
-    padding: 10px 60px;
-    font-size: 18px;
-    margin-top: 20px;
-    
+    padding: 10px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s, color 0.5s;
+    cursor: pointer; /* Ensures it looks clickable */
+    font-size: 16px;
+    margin-top: 20px;   
+}
+.submitBtn:hover{
+    background: rgb(0, 0, 100);
 }
 .copyright{
     width: 100%;
@@ -421,9 +487,11 @@ form input, form textarea{
     margin-top: 20px;
 }
 #msg{
-    color: rgb(14, 160, 14);
-    margin-top: -40px;
     display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: rgb(14, 160, 14);  
 }
 
 /* ------------------Animations-------------------- */
