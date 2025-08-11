@@ -11,19 +11,20 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav>
-        <h1 class="logo">Portfolio.</h1>
-        <ul id="sidemenu">
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+    <!-- Hamburger + Dropdown Menu -->
+    <div class="menu-container">
+        <div class="menu-icon" id="menuIcon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul id="dropdownMenu" class="dropdown-menu">
+            <li><a href="#header" title="Home"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#about" title="About"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="#skills" title="Skills"><i class="fa-solid fa-laptop-code"></i></a></li>
+            <li><a href="#projects" title="Projects"><i class="fa-solid fa-briefcase"></i></a></li>
+            <li><a href="#contact" title="Contact"><i class="fa-solid fa-envelope"></i></a></li>
         </ul>
-        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-    </nav>
+    </div>
 
     <!-- Header Section -->
     <header id="header">
@@ -40,11 +41,12 @@
                         <p><span id="element"></span></p>
                     </div>
                     <div class="header-contact">
-                        <a href="Auro's Resume.pdf" class="resume-btn" target="_blank"><i class="fa-solid fa-file"></i>
-                            Resume</a>
-                        <a class="social-icons" href="https://www.linkedin.com/in/aurosampad-champatiray/"
+                        <button href="Auro's Resume.pdf" class="resume-btn1" target="_blank"><i
+                                class="fa-solid fa-file"></i>
+                            Resume</button>
+                        <a class="social-icons1" href="https://www.linkedin.com/in/aurosampad-champatiray/"
                             target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                        <a class="social-icons" href="https://github.com/AuroSampad2003" target="_blank"><i
+                        <a class="social-icons1" href="https://github.com/AuroSampad2003" target="_blank"><i
                                 class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
@@ -76,14 +78,18 @@
                     <!-- Tabs Content -->
                     <div class="tab-contents active-tab" id="education">
                         <ul>
-                            <li><span>Board of Secondary Education, Odisha [2018]</span><br>Sri Aurobindo Integral
-                                Education Centre, Matrubihar,
-                                Kalupadaghat, Khordha</li>
-                            <li><span>Council of Higher Secondary, Odisha [2018-20]</span><br>Rajdhani H.S. School of
-                                Sc., Arts and Comm.,
-                                Bhubaneswar, Odisha</li>
-                            <li><span>Graduation Degree [2020-23]</span><br>Nayagarh Autonomous College, Nayagarh,
-                                Odisha<br>B.Sc. in Computer Science (Hons.)</li>
+                            <li>
+                                <span>B.Sc. in Computer Science [2020-23]</span>
+                                <br>Nayagarh Autonomous College, Nayagarh, Odisha
+                            </li>
+                            <li>
+                                <span>Higher Secondary (+2 Science) [2018-20]</span>
+                                <br>Rajdhani H.S. School of Sc., Arts and Comm., Bhubaneswar, Odisha
+                            </li>
+                            <li>
+                                <span>Secondary Education (10th) [2018]</span>
+                                <br>Sri Aurobindo Integral Education Centre, Matrubihar, Kalupadaghat, Khordha
+                            </li>
                         </ul>
                     </div>
 
@@ -180,6 +186,7 @@
     <script src="script.js"></script>
     <script src="skills.js"></script>
     <script src="projects.js"></script>
+    <script src="contact.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {

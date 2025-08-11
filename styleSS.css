@@ -13,20 +13,27 @@ nav .fa-solid{
         flex-wrap: wrap;
     }
     .header-image{
-        padding: auto;
-        flex-basis: content;
+        flex-basis: auto;
+        margin: 0 auto;
         text-align: center;
+        padding: 0; /* removed invalid auto */
     }
     .header-image img{
         width: 100%;
         max-width: 250px;
     }
-    .header-right{
-        flex-basis: 100%;
-    }
+    .header-right {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;  /* centers content horizontally */
+    align-items: center;      /* centers content vertically (optional) */
+    flex-direction: column;   /* stack its children vertically, if needed */
+    text-align: center;       /* centers inline text inside */
+}
+
     .header-text{
         flex-basis: 100%;
-        font-size: 1.8rem;
+        font-size: 2rem;
         text-shadow: 3px 3px 5px black;
     }
     .header-contact .resume{

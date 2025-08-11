@@ -15,6 +15,7 @@ const skills = [
     { name: "GitHub", image: "images/github-icon.png" },
     { name: "Eclipse", image: "images/eclipse-icon.png" },
     { name: "VS Code", image: "images/vs-code-icon.png" },
+    { name: "Canva", image: "images/canva-icon.png" },
     { name: "Figma", image: "images/figma-icon.png" },
 ];
 
@@ -35,7 +36,7 @@ function displaySkills() {
 
         // Initially hide skills beyond the first 'skillsToShowInitially' items
         if (index >= skillsToShowInitially) {
-            skillItem.classList.add('hidden');
+            skillItem.classList.add('hidden-skill');
         }
 
         skillsList.appendChild(skillItem);
@@ -57,13 +58,13 @@ function toggleSkills() {
 
     if (seeMoreBtn.innerText === "See More") {
         // Show all hidden skills
-        skillItems.forEach(item => item.classList.remove("hidden"));
+        skillItems.forEach(item => item.classList.remove("hidden-skill"));
         seeMoreBtn.innerText = "See Less";
     } else {
         // Hide extra skills again
         skillItems.forEach((item, index) => {
             if (index >= skillsToShowInitially) {
-                item.classList.add("hidden");
+                item.classList.add("hidden-skill");
             }
         });
         seeMoreBtn.innerText = "See More";

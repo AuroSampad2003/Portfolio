@@ -1,21 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: rgb(0, 0, 0);
     color: white;
-    
+
 }
 
-#header{
+#header {
     width: 100%;
     height: 100vh;
     background-image: url(images/bg.jpeg);
@@ -24,175 +24,253 @@ body{
     background-attachment: fixed;
     z-index: 100;
 }
-.container{
-    padding: 0 10%;   
-}
-nav{
+
+.container {
     padding: 0 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+}
+
+.menu-container {
     position: fixed;
-    width: 100%;
-    top: 0;
+    top: 15px;
+    right: 24px;
+    /* Creates some distance from window edge */
     z-index: 1000;
-    background: rgb(0, 0, 46);
-    backdrop-filter: blur(10px);
-}
-.logo{
-    position: relative;
-    font-size: 25px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: default;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Ensures dropdown aligns with menu icon's right edge */
 }
 
-nav ul li{
-    display: inline-block;
-    list-style-type: none;
-    margin: 10px 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    opacity: 0;
-    animation: slideBottom 1s ease forwards;
-}
-nav ul li a{
+/* Menu (hamburger) icon styling */
+.menu-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     color: white;
-    text-decoration: none;
-    font-size: 15px;
-    position: relative;
-    
+    font-size: 20px;
+    cursor: pointer;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+    margin-bottom: 8px;
 }
-nav ul li a::after{
-    content: '';
-    width: 0;
-    height: 2.5px;
-    background: blue;
+
+.menu-icon:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+.dropdown-menu {
     position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.3s;
-}
-nav ul li a:hover::after{
-    width: 100%;
+    top: 52px;
+    right: 0;
+    background: transparent;
+    list-style: none;
+    overflow: visible;
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    z-index: 1001;
 }
 
-.header{
+.dropdown-menu.show {
+    display: flex;
+}
+
+.dropdown-menu li {
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.dropdown-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-menu a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.dropdown-menu a.active {
+    color: blue;
+}
+
+.dropdown-menu a i {
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+
+.header {
     padding: 150px 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.header-image{
+.header-image {
     flex-basis: 35%;
     opacity: 0;
     animation: slideRight 1s ease forwards;
 }
-.header-image img{
+
+.header-image img {
     width: 80%;
     border-radius: 15px;
-    border: 1px solid rgb(20,20,20);
+    border: 1px solid rgb(20, 20, 20);
     transition: transform 0.3s ease;
 }
-.header-image img:hover{
+
+.header-image img:hover {
     transform: scale(1.1);
 }
 
-.header-right{
+.header-right {
     margin-top: 10%;
     flex-basis: 55%;
 }
-.header-text{
+
+.header-text {
     font-size: 3rem;
     font-weight: bold;
-    
+
 }
-.header-text h4{
+
+.header-text h4 {
     opacity: 0;
     animation: slideBottom 1s ease forwards;
-    
+
 }
-.name, #element{
+
+.name,
+#element {
     color: blue;
 }
-.header-text div{
+
+.header-text div {
     opacity: 0;
     animation: slideLeft 1s ease forwards;
 }
-.header-text p{
+
+.header-text p {
     opacity: 0;
     animation: slideTop 1s ease forwards;
 }
-/* .header-contact{
-    margin-top: 10px;
-} */
-.header-contact .resume-btn{
-    margin-right: 20px;
-    margin-top: 10px;
-    padding: 10px 30px;
+
+.header-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
 }
-.header-contact .social-icons{
-    display: inline-block;
-    margin-right: 20px;
+
+.header-contact .resume-btn1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    background: blue;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.5s, color 0.5s;
+}
+
+.header-contact .resume-btn1:hover {
+    background: rgb(0, 0, 100);
+    color: white;
+}
+
+.header-contact .social-icons1 {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     font-size: 30px;
     color: gray;
     transition: transform 0.4s;
 }
-.header-contact .social-icons:hover{
+
+.header-contact .social-icons1 i {
+    vertical-align: middle;
+}
+
+.header-contact .social-icons1:hover {
     color: blue;
     transform: translateY(-5px);
 }
 
 /* ------------about----------- */
-#about{
+#about {
     padding: 80px 0;
     color: gray;
 }
-.row{
+
+.row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.about-col-1{
+.about-col-1 {
     flex-basis: 35%;
 }
-.about-col-1 img{
+
+.about-col-1 img {
     margin-top: 10%;
     width: 100%;
     height: auto;
     border-radius: 15px;
 }
 
-.about-col-2{
+.about-col-2 {
     flex-basis: 60%;
 }
 
-.sub-title{
+.sub-title {
     font-size: 30px;
     font-weight: 600;
     color: white;
     margin-bottom: 15px;
 }
 
-.tab-titles{
+.tab-titles {
     display: flex;
     margin: 20px 0 40px;
 }
-.tab-links{
+
+.tab-links {
     margin-right: 50px;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
 }
-.tab-links::after{
+
+.tab-links::after {
     content: '';
     width: 0;
     height: 3px;
@@ -203,38 +281,43 @@ nav ul li a:hover::after{
     transition: 0.5s;
 }
 
-.tab-links.active-link::after{
+.tab-links.active-link::after {
     width: 50%;
 }
 
-.tab-contents ul li{
+.tab-contents ul li {
     list-style-type: none;
     margin: 10px 0;
 }
-.tab-contents ul li span{
+
+.tab-contents ul li span {
     color: #687eff;
     font-size: 14px;
 }
-.tab-contents{
+
+.tab-contents {
     display: none;
 }
-.tab-contents.active-tab{
+
+.tab-contents.active-tab {
     display: block;
 }
 
 /* ---------------skills-------------- */
-#skills{
+#skills {
     padding: 50px 0;
 }
-.skills-list{
+
+.skills-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
     width: 100%;
-    text-align: center; 
+    text-align: center;
 }
-.skills-list div{
+
+.skills-list div {
     width: 200px;
     height: 150px;
     background: rgb(20, 20, 20);
@@ -244,17 +327,20 @@ nav ul li a:hover::after{
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
 }
-.skills-list div img{
+
+.skills-list div img {
     height: 80px;
     width: auto;
     display: inline-block;
     vertical-align: middle;
 }
-.skills-list div h3{
+
+.skills-list div h3 {
     text-align: center;
     font-weight: 600;
     margin-top: 10px;
 }
+
 /* .skills-list div a{
     text-decoration: none;
     color: white;
@@ -262,13 +348,13 @@ nav ul li a:hover::after{
     margin-top: 20px;
     display: inline-block;
 } */
-.skills-list div:hover{
+.skills-list div:hover {
     border: 1px solid #687eff;
     transform: translateY(-10px);
 }
 
 /* Hidden Skills (Initially Collapsed) */
-.hidden {
+.hidden-skill {
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -286,7 +372,8 @@ nav ul li a:hover::after{
     color: white;
     background: transparent;
     transition: background 0.5s, color 0.5s;
-    cursor: pointer; /* Ensures it looks clickable */
+    cursor: pointer;
+    /* Ensures it looks clickable */
     font-size: 16px;
 }
 
@@ -296,31 +383,36 @@ nav ul li a:hover::after{
 }
 
 /* --------------projects-------------- */
-#projects{
-padding: 50px 0;
+#projects {
+    padding: 50px 0;
 }
-.work-list{
+
+.work-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 items per row */
     grid-gap: 40px;
     margin-top: 50px;
 }
-.work-item{
+
+.work-item {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
 }
-.work-item img{
+
+.work-item img {
     height: 100%;
     width: 100%;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
 }
-.work-info{
+
+.work-info {
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0, 0, 122, 0.358));
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 122, 0.358));
     backdrop-filter: blur(2px);
     border-radius: 10px;
     position: absolute;
@@ -328,24 +420,48 @@ padding: 50px 0;
     bottom: 0;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     padding: 0 40px;
     text-align: center;
-    font-size: 14px;
-    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.46);
     transition: height 0.5s;
 }
-.work-info h3{
+
+.work-info h3 {
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    /* Bigger font for title */
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.46);
 }
-.work-info a{
-    margin-top: 20px;
+
+.work-info p {
+    font-size: 14px;
+    /* Smaller or normal paragraph text */
+    font-weight: 100;
+    margin-bottom: 15px;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.46);
+}
+
+.bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* full card width */
+}
+
+.link-buttons {
+    display: flex;
+    gap: 10px;
+    /* space between buttons */
+}
+
+.link-buttons a {
     color: blue;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 40px;
     background: white;
     width: 40px;
@@ -353,14 +469,46 @@ padding: 50px 0;
     border-radius: 50%;
     text-align: center;
 }
-.work-item:hover img{
+
+.tech-stack {
+    background: black;
+    display: flex;
+    gap: 10px;
+    padding: 10px 10px;
+    border-radius: 6px;
+    /* black container is rounded, but not the images */
+    align-items: center;
+}
+
+.tech-stack img.tech-icon {
+    height: 24px;
+    /* standardizes height */
+    width: auto;
+    /* preserves aspect ratio */
+    object-fit: contain;
+    /* keeps full icon visible */
+    border: none;
+    /* no border */
+    border-radius: 0;
+    /* NO rounding on image */
+    background: none;
+    /* NO background on image */
+    box-shadow: none;
+    /* NO shadow */
+    padding: 0;
+    /* zero internal spacing */
+}
+
+.work-item:hover img {
     transform: scale(1.1);
 }
-.work-item:hover .work-info{
+
+.work-item:hover .work-info {
     height: 100%;
 }
+
 /* Hidden Works (Initially Collapsed) */
-.hidden {
+.hidden-work {
     display: none;
     visibility: hidden;
     opacity: 0;
@@ -368,7 +516,6 @@ padding: 50px 0;
     overflow: hidden;
     transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
 }
-
 
 /* "See More" Button */
 #seeMoreWorksBtn {
@@ -382,7 +529,8 @@ padding: 50px 0;
     color: white;
     background: transparent;
     transition: background 0.5s, color 0.5s;
-    cursor: pointer; /* Ensures it looks clickable */
+    cursor: pointer;
+    /* Ensures it looks clickable */
     font-size: 16px;
 }
 
@@ -398,37 +546,44 @@ padding: 50px 0;
     justify-content: space-between;
     flex-wrap: wrap;
 } */
-.contact-left{
+.contact-left {
     flex-basis: 40%;
     text-align: left;
 }
-.contact-right{
+
+.contact-right {
     flex-basis: 55%;
 }
-.contact-left p{
+
+.contact-left p {
     margin-top: 20px;
 }
-.contact-left p i{
+
+.contact-left p i {
     color: blue;
     margin-right: 15px;
     font-size: 25px;
 }
-.social-icons{
+
+.social-icons {
     margin-top: 50px;
     display: flex;
     gap: 20px;
 }
-.social-icons a{
+
+.social-icons a {
     text-decoration: none;
     font-size: 30px;
     color: gray;
     transition: transform 0.5s;
 }
-.social-icons a:hover{
+
+.social-icons a:hover {
     color: blue;
     transform: translateY(-5px);
 }
-.resume-btn{
+
+.resume-btn {
     display: inline-block;
     margin: 50px auto;
     width: fit-content;
@@ -439,17 +594,22 @@ padding: 50px 0;
     text-decoration: none;
     color: white;
     transition: background 0.5s, color 0.5s;
-    cursor: pointer; /* Ensures it looks clickable */
+    cursor: pointer;
+    /* Ensures it looks clickable */
     font-size: 16px;
     margin-top: 20px;
 }
-.resume-btn:hover{
+
+.resume-btn:hover {
     background: rgb(0, 0, 100);
 }
-.contact-right form{
+
+.contact-right form {
     width: 100%;
 }
-form input, form textarea{
+
+form input,
+form textarea {
     width: 100%;
     border: 0;
     outline: none;
@@ -460,7 +620,8 @@ form input, form textarea{
     font-size: 18px;
     border-radius: 6px;
 }
-.submitBtn{
+
+.submitBtn {
     display: block;
     margin: 50px auto;
     width: fit-content;
@@ -471,14 +632,17 @@ form input, form textarea{
     text-decoration: none;
     color: white;
     transition: background 0.5s, color 0.5s;
-    cursor: pointer; /* Ensures it looks clickable */
+    cursor: pointer;
+    /* Ensures it looks clickable */
     font-size: 16px;
-    margin-top: 20px;   
+    margin-top: 20px;
 }
-.submitBtn:hover{
+
+.submitBtn:hover {
     background: rgb(0, 0, 100);
 }
-.copyright{
+
+.copyright {
     width: 100%;
     text-align: center;
     padding: 15px 0;
@@ -486,55 +650,61 @@ form input, form textarea{
     font-weight: 300;
     margin-top: 20px;
 }
-#msg{
+
+#msg {
     display: block;
     font-size: 18px;
     margin-bottom: 10px;
     text-align: center;
-    color: rgb(14, 160, 14);  
+    color: rgb(14, 160, 14);
 }
 
 /* ------------------Animations-------------------- */
 
-@keyframes slideLeft{
-    0%{
+@keyframes slideLeft {
+    0% {
         transform: translateX(100px);
         opacity: 0;
     }
-    100%{
+
+    100% {
         transform: translateX(0px);
         opacity: 1;
     }
 }
-@keyframes slideRight{
-    0%{
+
+@keyframes slideRight {
+    0% {
         transform: translateX(-100px);
         opacity: 0;
     }
-    100%{
+
+    100% {
         transform: translateX(0px);
         opacity: 1;
     }
 }
-@keyframes slideTop{
-    0%{
+
+@keyframes slideTop {
+    0% {
         transform: translateY(100px);
         opacity: 0;
     }
-    100%{
+
+    100% {
         transform: translateY(0px);
         opacity: 1;
     }
 }
-@keyframes slideBottom{
-    0%{
+
+@keyframes slideBottom {
+    0% {
         transform: translateY(-100px);
         opacity: 0;
     }
-    100%{
+
+    100% {
         transform: translateY(0px);
         opacity: 1;
     }
 }
-
-

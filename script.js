@@ -1,4 +1,3 @@
-
 // Script for About Skills
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
@@ -18,57 +17,48 @@ function opentab(tabname) {
 
 
 // Script for Side Menu Bar
-var sidemenu = document.getElementById("sidemenu");
+const menuIcon = document.getElementById("menuIcon");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  let menuOpen = false;
 
-function openmenu() {
-    sidemenu.style.right = "0";
-}
+  menuIcon.addEventListener("click", () => {
+    menuOpen = !menuOpen;
 
-function closemenu() {
-    sidemenu.style.right = "-200px";
-}
-
-
-// Script for Google Sheets Form Submission
-const scriptURL = "https://script.google.com/macros/s/AKfycbzZ2uEjOrRMJ1217K0pMbcWA9bZ3mRdeZMgKKcEZXBwZANJZ0GkRUIKWFBHkQniGwHWBA/exec";
-const form = document.forms["submit-to-google-sheet"];
-const msg = document.getElementById("msg");
-const submitBtn = document.querySelector(".submitBtn");
-
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    console.log("Form Data:", Object.fromEntries(formData.entries())); // Logs all form data
-
-    if (!formData.get("email") || !formData.get("message") || !formData.get("name")) {
-        console.error("Missing required fields!");
-        msg.style.color = "red";
-        msg.innerHTML = "All fields are required!";
-        return;
+    if (menuOpen) {
+      // Show dropdown, change icon to X
+      dropdownMenu.classList.add("show");
+      menuIcon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    } else {
+      // Hide dropdown, change back to bars
+      dropdownMenu.classList.remove("show");
+      menuIcon.innerHTML = '<i class="fa-solid fa-bars"></i>';
     }
+  });
 
-    submitBtn.disabled = true;
-    submitBtn.style.background = "gray";
-    msg.innerHTML = "Sending message...";
+  // Grab all menu links
+const menuLinks = document.querySelectorAll('.dropdown-menu a');
 
-    try {
-        const response = await fetch(scriptURL, { method: "POST", body: formData });
-        if (!response.ok) throw new Error("Failed to send message!");
-
-        msg.style.color = "green";
-        msg.innerHTML = "Message sent successfully! Check your email.";
-
-        form.reset();
-    } catch (error) {
-        msg.style.color = "red";
-        msg.innerHTML = "Error sending message. Try again later!";
-        console.error("Error!", error.message);
-    } finally {
-        setTimeout(() => {
-            msg.innerHTML = "";
-            submitBtn.disabled = false;
-            submitBtn.style.background = "blue";
-        }, 5000);
-    }
+// Map each link's target section
+const sections = Array.from(menuLinks).map(link => {
+  const id = link.getAttribute('href');
+  return document.querySelector(id);
 });
+
+// Scroll listener for active section detection
+window.addEventListener('scroll', () => {
+  let currentIndex = sections.findIndex((section, i) => {
+    // Section top is before scroll point AND section bottom is after
+    const rect = section.getBoundingClientRect();
+    return rect.top <= 150 && rect.bottom >= 150;
+  });
+
+  // Remove old active
+  menuLinks.forEach(link => link.classList.remove('active'));
+
+  // Add active to current link
+  if (currentIndex >= 0) {
+    menuLinks[currentIndex].classList.add('active');
+  }
+});
+
+
