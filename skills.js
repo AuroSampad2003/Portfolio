@@ -15,6 +15,7 @@ const skills = [
     { name: "GitHub", image: "images/github-icon.png" },
     { name: "Eclipse", image: "images/eclipse-icon.png" },
     { name: "VS Code", image: "images/vs-code-icon.png" },
+    { name: "Vite", image: "images/vite-icon.png" },
     { name: "Canva", image: "images/canva-icon.png" },
     { name: "Figma", image: "images/figma-icon.png" },
 ];
