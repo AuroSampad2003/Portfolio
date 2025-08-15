@@ -10,6 +10,18 @@ html {
     scroll-behavior: smooth;
 }
 
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body,
+p,
+li {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body {
     background: rgb(0, 0, 0);
     color: white;
@@ -53,9 +65,7 @@ body {
     background: transparent;
     list-style: none;
     overflow: visible;
-    /* hide overflow when collapsed */
     max-height: 0;
-    /* collapse initially */
     opacity: 0;
     flex-direction: column;
     padding: 0;
@@ -66,10 +76,8 @@ body {
 
 .dropdown-menu.show {
     max-height: 500px;
-    /* enough height to show all items */
     opacity: 1;
     display: flex;
-    /* display flex must be set here for layout */
 }
 
 .dropdown-menu li {
@@ -93,7 +101,10 @@ body {
 }
 
 .dropdown-menu a.active {
-    color: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .dropdown-menu a i {
@@ -197,7 +208,10 @@ body {
 
 .name,
 #element {
-    color: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .header-text div {
@@ -223,7 +237,7 @@ body {
     justify-content: center;
     gap: 8px;
     width: fit-content;
-    background: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     padding: 10px 30px;
     border: none;
@@ -235,7 +249,7 @@ body {
 }
 
 .header-contact .resume-btn1:hover {
-    background: rgb(0, 0, 100);
+    background: linear-gradient(135deg, #5a6ad8, #6b42a0);
     color: white;
 }
 
@@ -253,7 +267,10 @@ body {
 }
 
 .header-contact .social-icons1:hover {
-    color: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     transform: translateY(-5px);
 }
 
@@ -364,7 +381,7 @@ body {
     content: '';
     width: 0;
     height: 3px;
-    background: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -380,10 +397,6 @@ body {
     margin: 10px 0;
 }
 
-/* .tab-contents ul li span {
-    color: #687eff;
-    font-size: 14px;
-} */
 .tab-contents {
     display: none;
 }
@@ -446,8 +459,6 @@ body {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
-    /* border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); */
     flex-shrink: 0;
     font-size: 28px;
     transition: all 0.3s ease;
@@ -467,7 +478,6 @@ body {
     flex: 1;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(15px);
-    /* border: 1px solid rgba(255, 255, 255, 0.15); */
     border-radius: 16px;
     padding: 22px 26px;
     color: #BFBFBF;
@@ -481,7 +491,6 @@ body {
     transform: translateY(-8px) scale(1.02);
     background: rgba(255, 255, 255, 0.12);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    /* border-color: rgba(255, 255, 255, 0.25); */
 }
 
 /* Header inside card to separate degree and year */
@@ -506,7 +515,6 @@ body {
     background: linear-gradient(135deg, #667eea, #764ba2);
     padding: 6px 14px;
     border-radius: 20px;
-    /* box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3); */
 }
 
 /* Card content span styling */
@@ -594,7 +602,6 @@ body {
     }
 }
 
-
 /* ================= SKILLS SECTION ================= */
 #skills {
     padding: 50px 0;
@@ -635,6 +642,7 @@ body {
 
 .skills-list div:hover {
     border: 1px solid #687eff;
+    /* border-image: linear-gradient(135deg, #667eea, #764ba2) 1; */
     transform: translateY(-10px);
 }
 
@@ -648,7 +656,8 @@ body {
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid blue;
+    border: 1px solid #687eff;
+    /* border-image: linear-gradient(135deg, #667eea, #764ba2) 1; */
     padding: 10px 50px;
     border-radius: 6px;
     text-decoration: none;
@@ -660,8 +669,9 @@ body {
 }
 
 #seeMoreSkillsBtn:hover {
-    background: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
+    border: none;
 }
 
 /* --- Mobile --- */
@@ -729,7 +739,7 @@ body {
 .work-info {
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 122, 0.358));
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(102, 126, 234, 0.4));
     backdrop-filter: blur(2px);
     border-radius: 10px;
     position: absolute;
@@ -772,6 +782,10 @@ body {
 }
 
 .link-buttons a {
+    /* background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; */
     color: blue;
     text-decoration: none;
     font-size: 15px;
@@ -824,7 +838,8 @@ body {
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid blue;
+    border: 1px solid #687eff;
+    /* border-image: linear-gradient(135deg, #667eea, #764ba2) 1; */
     padding: 10px 50px;
     border-radius: 6px;
     text-decoration: none;
@@ -836,8 +851,9 @@ body {
 }
 
 #seeMoreWorksBtn:hover {
-    background: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
+    border: none;
 }
 
 /* --- Mobile --- */
@@ -864,7 +880,10 @@ body {
 
     .layer a {
         margin-top: 20px;
-        color: blue;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         text-decoration: none;
         font-size: 10px;
         line-height: 34px;
@@ -880,7 +899,8 @@ body {
         margin: 30px auto;
         width: fit-content;
         font-size: 11px;
-        border: 1px solid blue;
+        border: 1px solid;
+        border-image: linear-gradient(135deg, #667eea, #764ba2) 1;
         padding: 10px 20px;
         border-radius: 6px;
         text-decoration: none;
@@ -901,12 +921,6 @@ body {
     .work-info p {
         font-size: 12px;
         margin-bottom: 10px;
-    }
-
-    .bottom-row {
-        /* flex-direction: column;
-        gap: 10px;
-        align-items: stretch; */
     }
 
     .link-buttons {
@@ -933,20 +947,15 @@ body {
 
 }
 
-
 /* --------- Mobile: Smaller "See More" Buttons --------- */
 @media only screen and (max-width: 600px) {
 
     #seeMoreSkillsBtn,
     #seeMoreWorksBtn {
         padding: 6px 20px;
-        /* smaller padding */
         font-size: 14px;
-        /* smaller text */
         border-radius: 4px;
-        /* slightly less curvature */
         margin: 30px auto;
-        /* reduce top/bottom space */
     }
 }
 
@@ -965,7 +974,10 @@ body {
 }
 
 .contact-left p i {
-    color: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-right: 15px;
     font-size: 25px;
 }
@@ -984,7 +996,10 @@ body {
 }
 
 .social-icons a:hover {
-    color: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     transform: translateY(-5px);
 }
 
@@ -993,7 +1008,7 @@ body {
     margin: 50px auto;
     width: fit-content;
     border: none;
-    background: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     padding: 10px 45px;
     border-radius: 6px;
     text-decoration: none;
@@ -1005,7 +1020,7 @@ body {
 }
 
 .resume-btn:hover {
-    background: rgb(0, 0, 100);
+    background: linear-gradient(135deg, #5a6ad8, #6b42a0);
 }
 
 .contact-right form {
@@ -1030,7 +1045,7 @@ form textarea {
     margin: 50px auto;
     width: fit-content;
     border: none;
-    background: blue;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     padding: 10px 50px;
     border-radius: 6px;
     text-decoration: none;
@@ -1042,7 +1057,7 @@ form textarea {
 }
 
 .submitBtn:hover {
-    background: rgb(0, 0, 100);
+    background: linear-gradient(135deg, #5a6ad8, #6b42a0);
 }
 
 .copyright {
@@ -1064,14 +1079,15 @@ form textarea {
 .signature {
     font-family: 'Dancing Script', cursive;
     font-size: 2.2rem;
-    color: #1100ff;
-    /* deep signature style color; switch as you wish */
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: 700;
     margin-top: 6px;
     letter-spacing: .5px;
     user-select: none;
     display: block;
-    /* (optional) A little faded effect for a "written" look */
     opacity: 0.85;
 }
 
@@ -1087,7 +1103,6 @@ form textarea {
     }
 }
 
-
 #msg {
     display: block;
     font-size: 18px;
@@ -1095,7 +1110,6 @@ form textarea {
     text-align: center;
     color: rgb(14, 160, 14);
 }
-
 
 /* --- Mobile --- */
 @media only screen and (max-width: 600px) {
