@@ -571,7 +571,45 @@ body {
         color: white;
         transition: background 0.5s;
     }
+
+    .work-info {
+        padding: 0 10px;
+        border-radius: 7px;
+    }
+    .work-info h3 {
+        font-size: 16px;
+        margin-bottom: 7px;
+    }
+    .work-info p {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .bottom-row {
+        /* flex-direction: column;
+        gap: 10px;
+        align-items: stretch; */
+    }
+    .link-buttons {
+        gap: 7px;
+    }
+    .link-buttons a {
+        font-size: 13px;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+    }
+    .tech-stack {
+        flex-wrap: wrap;
+        gap: 7px;
+        padding: 7px 7px;
+        border-radius: 4px;
+    }
+    .tech-stack img.tech-icon {
+        height: 20px;
+    }
+
 }
+
 
 /* --------- Mobile: Smaller "See More" Buttons --------- */
 @media only screen and (max-width: 600px) {
@@ -769,3 +807,5 @@ form input, form textarea {
     0% { transform: translateY(-100px); opacity: 0; }
     100% { transform: translateY(0px); opacity: 1; }
 }
+
+
