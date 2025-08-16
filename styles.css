@@ -54,7 +54,7 @@ body {
 }
 
 .menu-icon:hover {
-    background: rgba(255, 255, 255, 0.25);
+    /* background: rgba(255, 255, 255, 0.25); */
     transform: scale(1.1);
 }
 
@@ -65,18 +65,14 @@ body {
     background: transparent;
     list-style: none;
     overflow: visible;
-    max-height: 0;
-    opacity: 0;
+    display: none;
     flex-direction: column;
     padding: 0;
     margin: 0;
     z-index: 1001;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
 .dropdown-menu.show {
-    max-height: 500px;
-    opacity: 1;
     display: flex;
 }
 
@@ -93,7 +89,6 @@ body {
     height: 44px;
     color: white;
     text-decoration: none;
-    box-sizing: border-box;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
@@ -101,10 +96,7 @@ body {
 }
 
 .dropdown-menu a.active {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #687eff;
 }
 
 .dropdown-menu a i {
@@ -113,7 +105,7 @@ body {
 }
 
 .dropdown-menu a:hover {
-    background: rgba(255, 255, 255, 0.25);
+    /* background: rgba(255, 255, 255, 0.25); */
     transform: scale(1.1);
 }
 
@@ -312,7 +304,7 @@ body {
         font-size: 1.7rem;
         line-height: 1.4;
         margin-top: 15px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); */
     }
 
     .header-contact .resume {
@@ -326,7 +318,7 @@ body {
         margin-right: 10px;
         text-decoration: none;
         font-size: 25px;
-        text-shadow: 1px 1px 10px black;
+        /* text-shadow: 1px 1px 10px black; */
     }
 }
 
