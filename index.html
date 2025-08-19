@@ -7,7 +7,8 @@
     <title>Auro | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/2c313ee4fc.js" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&
     family=Montserrat:wght@600;700&
     family=Open+Sans:wght@400;600&
@@ -20,7 +21,7 @@
         <div class="menu-icon" id="menuIcon">
             <i class="fa-solid fa-bars"></i>
         </div>
-        
+
         <ul id="dropdownMenu" class="dropdown-menu">
             <li><a href="#header" title="Home"><i class="fa-solid fa-house"></i></a></li>
             <li><a href="#about" title="About"><i class="fa-regular fa-address-card"></i></a></li>
@@ -28,6 +29,11 @@
             <li><a href="#projects" title="Projects"><i class="fa-solid fa-briefcase"></i></a></li>
             <li><a href="#contact" title="Contact"><i class="fa-solid fa-envelope"></i></a></li>
         </ul>
+    </div>
+
+    <!-- Message banner -->
+    <div id="msg" class="message-banner">
+        <div class="progress-bar"></div>
     </div>
 
     <!-- Header Section -->
@@ -67,7 +73,13 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>I’m <span style="color: #687eff; font-size: large; font-style: italic;">Aurosampad Champatiray</span>, a passionate <span style="color: #687eff;">Full-Stack Developer | Frontend & Web Developer</span> with hands-on experience in building dynamic, user-friendly web applications. My skills span both frontend and backend technologies. I enjoy creating responsive interfaces, designing scalable solutions, and turning ideas into functional products. I thrive in learning new tools, solving problems, and contributing to projects that make an impact.</p>
+                    <p>I’m <span style="color: #687eff; font-size: large; font-style: italic;">Aurosampad
+                            Champatiray</span>, a passionate <span style="color: #687eff;">Full-Stack Developer |
+                            Frontend & Web Developer</span> with hands-on experience in building dynamic, user-friendly
+                        web applications. My skills span both frontend and backend technologies. I enjoy creating
+                        responsive interfaces, designing scalable solutions, and turning ideas into functional products.
+                        I thrive in learning new tools, solving problems, and contributing to projects that make an
+                        impact.</p>
 
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('education')">Education</p>
@@ -225,11 +237,11 @@
                                 class="fa-brands fa-linkedin"></i></a>
                         <a href="https://github.com/AuroSampad2003"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <button href="Auro's Resume.pdf" class="resume-btn" target="_blank"><i class="fa-solid fa-file"></i> Resume
+                    <button href="Auro's Resume.pdf" class="resume-btn" target="_blank"><i class="fa-solid fa-file"></i>
+                        Resume
                     </button>
                 </div>
                 <div class="contact-right">
-                    <span id="msg"></span>
                     <form name="submit-to-google-sheet">
                         <input type="text" name="name" placeholder="Full Name" required>
                         <input type="email" name="email" placeholder="Email" required>
@@ -256,7 +268,8 @@
         });
     </script>
 
-    <script src="script.js"></script>
+    <script src="menu-bar.js"></script>
+    <script src="about.js"></script>
     <script src="skills.js"></script>
     <script src="projects.js"></script>
     <script src="contact.js"></script>

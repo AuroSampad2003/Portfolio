@@ -458,13 +458,13 @@ body {
 
 /* Gradient text on the icon */
 .cap-icon i {
-    display: flex;            
-    align-items: center;        
-    justify-content: center;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    font-size: 28px;            
-    line-height: 1;             
+    font-size: 28px;
+    line-height: 1;
     background: linear-gradient(135deg, #667eea, #764ba2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -792,7 +792,6 @@ body {
     text-decoration: none;
 }
 
-
 .tech-stack {
     background: black;
     display: flex;
@@ -1019,6 +1018,313 @@ body {
     background: linear-gradient(135deg, #5a6ad8, #6b42a0);
 }
 
+/* Message banner styles */
+.message-banner {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    width: 80%;
+    max-width: 400px;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    overflow: hidden;
+    /* position: relative; */
+    text-align: center;
+}
+
+
+/* Show the banner */
+.message-banner.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Success notification - Green theme */
+.message-banner.success {
+    background: #2d5016;
+    color: #4ade80;
+}
+
+.message-banner.success::before {
+    content: "✓";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(156, 168, 136, 0.2);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+    color: #4ade80;
+}
+
+/* Error notification - Red theme */
+.message-banner.error {
+    background: #4a1f1f;
+    color: #f87171;
+}
+
+.message-banner.error::before {
+    content: "✕";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(214, 158, 158, 0.2);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+    color: #f87171;
+}
+
+/* Loading notification - Blue theme */
+.message-banner.loading {
+    background: #101e32;
+    color: #60a5fa;
+}
+
+.message-banner.loading::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(139, 179, 217, 0.3);
+    border-top: 2px solid #60a5fa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    flex-shrink: 0;
+}
+
+/* Warning notification - Orange/Brown theme */
+.message-banner.warning {
+    background: #4a3419;
+    color: #f59e0b;
+}
+
+.message-banner.warning::before {
+    content: "!";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(212, 184, 150, 0.2);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+    color: #f59e0b;
+}
+
+/* Info notification - Blue theme */
+.message-banner.info {
+    background: #2d1b47;
+    color: #8b5cf6;
+}
+
+.message-banner.info::before {
+    content: "i";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(168, 85, 247, 0.2);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+    color: #8b5cf6;
+}
+
+/* Progress bar container */
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 0.5rem 0.5rem;
+    overflow: hidden;
+}
+
+/* Progress bar fill - different colors for each type */
+.message-banner.success .progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #4ade80;
+    /* Bright green */
+    transition: width 0.1s ease;
+}
+
+.message-banner.error .progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #f87171;
+    /* Bright red */
+    transition: width 0.1s ease;
+}
+
+.message-banner.loading .progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #60a5fa;
+    /* Bright blue */
+    transition: width 0.1s ease;
+}
+
+.message-banner.warning .progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #f59e0b;
+    /* Bright orange */
+    transition: width 0.1s ease;
+}
+
+.message-banner.info .progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #8b5cf6; /* Bright violet progress bar */
+    transition: width 0.1s ease;
+}
+
+/* Progress bar animations - different durations */
+.message-banner.loading.show .progress-bar::after {
+    animation: progressFillSlow 6s linear forwards;
+}
+
+.message-banner.success.show .progress-bar::after,
+.message-banner.error.show .progress-bar::after,
+.message-banner.warning.show .progress-bar::after,
+.message-banner.info.show .progress-bar::after {
+    animation: progressFill 3s linear forwards;
+}
+
+/* Auto-hide after progress completion */
+.message-banner.loading.show {
+    animation: fadeIn 0.3s ease forwards, autoHideLoading 6.3s ease forwards;
+}
+
+.message-banner.success.show,
+.message-banner.error.show,
+.message-banner.warning.show,
+.message-banner.info.show {
+    animation: fadeIn 0.3s ease forwards, autoHide 3.3s ease forwards;
+}
+
+/* Hide animation */
+.message-banner.hide {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+/* Keyframes */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes autoHide {
+    0%, 94% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50px) scale(0.95);
+        visibility: hidden;
+    }
+}
+
+@keyframes autoHideLoading {
+    0%, 96% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50px) scale(0.95);
+        visibility: hidden;
+    }
+}
+
+@keyframes progressFill {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+@keyframes progressFillSlow {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50px) scale(0.95);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-100px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+
+
+/* Your existing form styles remain the same */
 .contact-right form {
     width: 100%;
 }
@@ -1051,6 +1357,12 @@ form textarea {
     font-size: 16px;
     margin-top: 20px;
 }
+
+.submitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 
 .submitBtn:hover {
     background: linear-gradient(135deg, #5a6ad8, #6b42a0);
@@ -1099,13 +1411,13 @@ form textarea {
     }
 }
 
-#msg {
+/* #msg {
     display: block;
     font-size: 18px;
     margin-bottom: 10px;
     text-align: center;
     color: rgb(14, 160, 14);
-}
+} */
 
 /* --- Mobile --- */
 @media only screen and (max-width: 600px) {
