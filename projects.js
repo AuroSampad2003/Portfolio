@@ -85,11 +85,11 @@ function displayWorks() {
                   <!-- Right side: Tech stack -->
                   <div class="tech-stack">
                     ${Array.isArray(work.techStack) && work.techStack.length > 0
-                          ? work.techStack.map(icon => `
+        ? work.techStack.map(icon => `
                             <img src="${icon}" alt="Tech icon" class="tech-icon" />
                           `).join('')
-                          : '' // show nothing if no tech stack
-                        }
+        : '' // show nothing if no tech stack
+      }
                   </div>
               </div>
             </div>
