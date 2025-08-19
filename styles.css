@@ -1021,7 +1021,7 @@ body {
 /* Message banner styles */
 .message-banner {
     position: fixed;
-    top: 10px;
+    top: 5px;
     left: 50%;
     transform: translateX(-50%) translateY(-100px);
     width: 80%;
@@ -1471,6 +1471,26 @@ form textarea {
         font-size: 14px;
         border-radius: 6px;
     }
+
+    .message-banner {
+    width: 90%;              /* take more width on small screen */
+    max-width: 320px;        /* shrink max size */
+    font-size: 0.75rem;      /* smaller text */
+    padding: 0.75rem 1rem;   /* less padding */
+    gap: 0.5rem;             /* tighter spacing */
+  }
+
+  .message-banner::before {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;         /* smaller icon size */
+  }
+
+  .message-banner.loading::before {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+  }
 
     .copyright {
         margin-top: 50px;
