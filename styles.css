@@ -458,7 +458,13 @@ body {
 
 /* Gradient text on the icon */
 .cap-icon i {
-    display: inline-block;
+    display: flex;            
+    align-items: center;        
+    justify-content: center;    
+    width: 100%;
+    height: 100%;
+    font-size: 28px;            
+    line-height: 1;             
     background: linear-gradient(135deg, #667eea, #764ba2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

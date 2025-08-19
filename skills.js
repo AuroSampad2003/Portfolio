@@ -9,7 +9,6 @@ const skills = [
     { name: "Hibernate", image: "images/hibernate-icon.png" },
     { name: "Spring", image: "images/spring-icon.png" },
     { name: "Spring Boot", image: "images/springboot-icon.png" },
-    { name: "SQL", image: "images/sql-icon.png" },
     { name: "MySQL", image: "images/mysql-icon.png" },
     { name: "Git", image: "images/git-icon.png" },
     { name: "GitHub", image: "images/github-icon.png" },
